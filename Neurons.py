@@ -47,6 +47,7 @@ class OurNeuralNetwork:
         self.b2 = np.random.normal()
         self.b3 = np.random.normal()
 
+    # 前向传播
     def feedforward(self, x):
         h1 = sigmoid(self.w1*x[0]+self.w2*x[1]+self.b1)
         h2 = sigmoid(self.w3*x[0]+self.w4*x[1]+self.b2)
@@ -55,6 +56,8 @@ class OurNeuralNetwork:
 
         return o1
 
+    # 后向误差传播
+    # 神经网络训练
     def train(self, data, all_y_trues):
         learn_rate = 0.1
         epochs = 1000
